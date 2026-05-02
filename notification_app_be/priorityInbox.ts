@@ -167,26 +167,18 @@ const NOTIFICATIONS_API =
 async function fetchNotifications(): Promise<Notification[]> {
   const authToken = process.env.AUTH_TOKEN ?? "";
 
+  if (!authToken) {
+    throw new Error(
+      "AUTH_TOKEN environment variable is not set. Run: $env:AUTH_TOKEN = $r.access_token"
+    );
+  }
+
   await Log(
     "backend",
     "info",
     "handler",
     `Fetching notifications from ${NOTIFICATIONS_API}`
   );
-
-  if (!authToken) {
-    await Log(
-      "backend",
-      "fatal",
-      "handler",
-      "AUTH_TOKEN is not set — cannot authenticate with the notifications API"
-    );
-    throw new Error(
-      "AUTH_TOKEN environment variable is not set. " +
-        "Create a .env file with AUTH_TOKEN=<your_token> and run: " +
-        "node -r dotenv/config priorityInbox.ts"
-    );
-  }
 
   const response = await fetch(NOTIFICATIONS_API, {
     method: "GET",
