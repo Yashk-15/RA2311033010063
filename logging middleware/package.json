@@ -1,0 +1,14 @@
+{
+  "name": "logging-middleware",
+  "version": "1.0.0",
+  "description": "Reusable logging middleware for campus notification platform",
+  "main": "index.ts",
+  "scripts": {
+    "test": "npx ts-node test.ts"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.5",
+    "ts-node": "^10.9.2",
+    "@types/node": "^20.12.12"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "name": "notification-app-be",
+  "version": "1.0.0",
+  "description": "Campus notification platform — backend (Stage 1: Priority Inbox)",
+  "main": "priorityInbox.ts",
+  "scripts": {
+    "start": "npx ts-node priorityInbox.ts",
+    "top10": "npx ts-node priorityInbox.ts 10",
+    "top15": "npx ts-node priorityInbox.ts 15",
+    "top20": "npx ts-node priorityInbox.ts 20"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.5",
+    "ts-node": "^10.9.2",
+    "@types/node": "^20.12.12"
+  }
+}
